@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Student Info | {{ first }} {{ last }}{% endblock %}
+
+{% block body %}
+  <h1>{{ first }} {{ last }}</h1>
+
+  <p>GitHub Account: {{ github }}</p>
+
+  <ul>
+  {% for grade in grades %}
+    <li>  Student name: <a href="/student?github={{grade[0]}}">{{grade[0]}}</a> 
+    and grade: {{grade[1]}} </li>
+  {% endfor %}
+  </ul>
+{% endblock %}
